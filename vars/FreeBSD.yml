@@ -1,0 +1,23 @@
+---
+
+netdata_global_options:
+- section: global
+  option: "bind to"
+  value: "{{ netdata_bind_address | default(ansible_facts.vtnet1.ipv4[0].address)}}"
+
+netdata_conf_file: /usr/local/etc/netdata/netdata.conf
+netdata_health_alarm_notify_conf: /usr/local/etc/netdata/health_alarm_notify.conf
+
+netdata_package:
+- netdata
+
+netdata_dependencies:
+- bash 
+- curl
+- pkgconf 
+- python27
+- e2fsprogs-libuuid
+
+netdata_extra_packages: []
+
+netdata_packages: "{{ netdata_package + netdata_dependencies + netdata_extra_packages }}"

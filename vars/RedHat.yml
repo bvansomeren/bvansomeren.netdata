@@ -1,0 +1,2 @@
+netdata_conf_file: /opt/netdata/etc/netdata/netdata.conf
+netdata_health_alarm_notify_conf: /opt/netdata/etc/netdata/health_alarm_notify.conf
